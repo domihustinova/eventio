@@ -1,0 +1,48 @@
+{
+  "env": {
+      "browser": true,
+      "es2021": true,
+      "jest": true
+  },
+  "extends": [
+      "eslint:recommended",
+      "plugin:react/recommended",
+      "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": "latest",
+      "sourceType": "module"
+  },
+  "plugins": [
+    "prettier",
+    "react"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
+    "prefer-destructuring": "warn",
+    "react/destructuring-assignment": "warn",
+    "react/no-this-in-sfc": "warn",
+    "react/jsx-fragments": "error",
+    "react/jsx-key": "error",
+    "react/prop-types": "off",
+    "react/no-children-prop": "warn",
+    "react/no-array-index-key": "warn",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "react/no-deprecated": "warn",
+    "react/no-unused-state": "warn",
+    "react/prefer-es6-class": "warn",
+    "react/jsx-no-undef": "warn",
+    "react/jsx-no-target-blank": "error",
+    "react/jsx-tag-spacing": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
