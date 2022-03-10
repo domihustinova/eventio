@@ -1,5 +1,7 @@
+import { GlobalStyle } from './theme/globalStyle'
+
 function App() {
-  return <div></div>
+  return <GlobalStyle />
 }
 
 export default App
