@@ -17,7 +17,9 @@ export const initialState = {
 }
 
 export const AuthReducer = (initialState, action) => {
-  switch (action.type) {
+  const { type, payload, error } = action
+
+  switch (type) {
     case AUTH_REDUCER_ACTION_TYPES.REQUEST_LOGIN:
       return {
         ...initialState,
@@ -33,16 +35,16 @@ export const AuthReducer = (initialState, action) => {
     case AUTH_REDUCER_ACTION_TYPES.REFRESH_TOKEN_SUCCESS:
       return {
         ...initialState,
-        token: action.payload.token,
+        token: payload.token,
         loading: false,
         errorMessage: null,
       }
     case AUTH_REDUCER_ACTION_TYPES.LOGIN_SUCCESS:
       return {
         ...initialState,
-        user: action.payload.data,
-        token: action.payload.token,
-        refreshToken: action.payload.refreshToken,
+        user: payload.data,
+        token: payload.token,
+        refreshToken: payload.refreshToken,
         loading: false,
         errorMessage: null,
       }
@@ -59,10 +61,10 @@ export const AuthReducer = (initialState, action) => {
       return {
         ...initialState,
         loading: false,
-        errorMessage: action.error,
+        errorMessage: error,
       }
 
     default:
-      throw new Error(`Unhandled action type: ${action.type}`)
+      throw new Error(`Unhandled action type: ${type}`)
   }
 }

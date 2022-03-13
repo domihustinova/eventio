@@ -29,7 +29,3 @@ EventCardList.Attendees = function EventCardListAttendees({ children, ...restPro
 EventCardList.ActionButton = function EventCardListActionButton({ children, ...restProps }) {
   return <ActionButton {...restProps}>{children}</ActionButton>
 }
-
-EventCardList.Content = function EventCardListContent({ children, ...restProps }) {
-  return <Content {...restProps}>{children}</Content>
-}
