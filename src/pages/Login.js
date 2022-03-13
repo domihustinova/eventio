@@ -5,6 +5,7 @@ import storm from '../images/storm.png'
 import { HEADER_THEME } from '../utils/consts'
 import { Header } from '../components/Header/Header'
 import { HeaderContainer } from '../containers/Header'
+import { LoginContainer } from '../containers/Login'
 
 const Layout = styled.div`
   display: flex;
@@ -43,6 +44,7 @@ export function Login() {
         <Img src={storm} />
         <Quote>“Great, kid. Don’t get cocky.”</Quote>
       </div>
+      <LoginContainer />
     </Layout>
   )
 }
