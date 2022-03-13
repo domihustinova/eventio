@@ -27,7 +27,7 @@ EventCardGrid.Owner = function EventCardGridOwner({ children, ...restProps }) {
 EventCardGrid.Attendees = function EventCardGridAttendees({ children, ...restProps }) {
   return (
     <Attendees {...restProps}>
-      <Img src={person} />
+      <Img alt="person" src={person} />
       {children}
     </Attendees>
   )

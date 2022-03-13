@@ -46,7 +46,7 @@ Login.Input = function LoginInput({ id, name, label, type, error, callback, ...r
     <Wrapper htmlFor={id}>
       <Input id={id} name={name} label={label} type={type} error={error} required {...restProps} />
       <Label htmlFor={id}>{label}</Label>
-      {name === 'password' && <Img src={show} onClick={callback} />}
+      {name === 'password' && <Img alt="show" src={show} onClick={callback} />}
     </Wrapper>
   )
 }

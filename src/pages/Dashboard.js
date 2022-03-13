@@ -11,7 +11,6 @@ import { Wrapper } from '../components/common/common'
 import { Header } from '../components/Header/Header'
 import { EventsContainer } from '../containers/Events'
 import { HeaderContainer } from '../containers/Header'
-import { ReactComponent as DropdownArrow } from '../images/dropdown-arrow.svg'
 
 export function Dashboard() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false)
@@ -39,13 +38,9 @@ export function Dashboard() {
         <Header.Wrapper ref={parentRef}>
           <Header.Account onClick={() => setIsDropDownOpen(!isDropDownOpen)}>
             <Header.AccountImage>{getInitials(firstName, lastName)}</Header.AccountImage>
-            {isMobile ? (
-              <DropdownArrow />
-            ) : (
-              <Header.AccountName>
-                {firstName} {lastName}
-              </Header.AccountName>
-            )}
+            <Header.AccountName isMobile={isMobile}>
+              {firstName} {lastName}
+            </Header.AccountName>
             {isDropDownOpen && (
               <Header.Dropdown>
                 <Header.DropdownButton onClick={handleLogout}>Logout</Header.DropdownButton>

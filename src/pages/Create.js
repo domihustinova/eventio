@@ -15,7 +15,7 @@ export function Create() {
   return (
     <Wrapper>
       <HeaderContainer theme={HEADER_THEME.DARK}>
-        <Header.Close to={ROUTES.DASHBOARD}>{isMobile ? '' : 'Close'}</Header.Close>
+        <Header.Close to={ROUTES.DASHBOARD}>{!isMobile && 'Close'}</Header.Close>
       </HeaderContainer>
       <CreateEventContainer />
     </Wrapper>

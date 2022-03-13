@@ -42,7 +42,7 @@ export const Description = styled(CommonDescription)`
 `
 
 export const Footer = styled.div`
-  width: 100%;
+  width: ${({ isMobile }) => (isMobile ? '100%' : '')};
   display: flex;
   flex-direction: row;
   justify-content: space-between;

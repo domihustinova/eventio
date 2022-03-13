@@ -55,31 +55,17 @@ export function EventsCardContainer({ event, userId, view, onJoin, onLeave }) {
         </EventCardList.Owner>
       )}
       <EventCardList.Date>{format(Date.parse(date), 'MMMM d, yyy - h:m a')}</EventCardList.Date>
-      {isMobile ? (
-        <EventCardList.Footer>
-          <EventCardList.Attendees>
-            {attendees.length} of {capacity}
-          </EventCardList.Attendees>
-          <EventCardGrid.ActionButton
-            isAttending={isAttending}
-            onClick={() => (isAttending ? onLeave(id) : onJoin(id))}
-          >
-            {isAttending ? EVENT_ACTION.LEAVE : EVENT_ACTION.JOIN}
-          </EventCardGrid.ActionButton>
-        </EventCardList.Footer>
-      ) : (
-        <>
-          <EventCardList.Attendees>
-            {attendees.length} of {capacity}
-          </EventCardList.Attendees>
-          <EventCardGrid.ActionButton
-            isAttending={isAttending}
-            onClick={() => (isAttending ? onLeave(id) : onJoin(id))}
-          >
-            {isAttending ? EVENT_ACTION.LEAVE : EVENT_ACTION.JOIN}
-          </EventCardGrid.ActionButton>
-        </>
-      )}
+      <EventCardList.Footer isMobile={isMobile}>
+        <EventCardList.Attendees isMobile={isMobile}>
+          {attendees.length} of {capacity}
+        </EventCardList.Attendees>
+        <EventCardGrid.ActionButton
+          isAttending={isAttending}
+          onClick={() => (isAttending ? onLeave(id) : onJoin(id))}
+        >
+          {isAttending ? EVENT_ACTION.LEAVE : EVENT_ACTION.JOIN}
+        </EventCardGrid.ActionButton>
+      </EventCardList.Footer>
     </EventCardList>
   )
 }

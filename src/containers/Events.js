@@ -80,12 +80,14 @@ export function EventsContainer() {
           </Events.FilterGroup>
           <Events.ToggleGroup>
             <Events.Toggle
+              aria-label="Toggle grid view"
               active={view === EVENTS_VIEW.GRID}
               onClick={() => setView(EVENTS_VIEW.GRID)}
             >
               <Grid />
             </Events.Toggle>
             <Events.Toggle
+              aria-label="Toggle list view"
               active={view === EVENTS_VIEW.LIST}
               onClick={() => setView(EVENTS_VIEW.LIST)}
             >
@@ -109,7 +111,7 @@ export function EventsContainer() {
           </Events.Frame>
         )}
       </Events>
-      <Events.Add to={ROUTES.CREATE} />
+      <Events.Add name="Create Event" to={ROUTES.CREATE} />
     </>
   )
 }

@@ -31,7 +31,11 @@ Events.FilterGroup = function EventsFilterGroup({ children, ...restProps }) {
 }
 
 Events.Toggle = function EventsToggle({ children, ...restProps }) {
-  return <Toggle {...restProps}>{children}</Toggle>
+  return (
+    <Toggle type="button" role="button" {...restProps}>
+      {children}
+    </Toggle>
+  )
 }
 
 Events.ToggleGroup = function EventsToggleGroup({ children, ...restProps }) {

@@ -32,6 +32,7 @@ export const Attendees = styled.p`
   align-items: center;
   font-size: 14px;
   line-height: 24px;
+  margin-right: ${({ isMobile }) => (isMobile ? '' : '20px')};
   color: #949ea8;
 `
 

@@ -53,10 +53,10 @@ Header.AccountImage = function HeaderAccountImage({ children, ...restProps }) {
   return <AccountImage {...restProps}>{children}</AccountImage>
 }
 
-Header.AccountName = function HeaderAccountName({ children, ...restProps }) {
+Header.AccountName = function HeaderAccountName({ isMobile, children, ...restProps }) {
   return (
     <AccountName {...restProps}>
-      {children}
+      {!isMobile && children}
       <DropdownArrow />
     </AccountName>
   )
