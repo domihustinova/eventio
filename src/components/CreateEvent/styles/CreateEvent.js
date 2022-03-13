@@ -8,6 +8,13 @@ export const Container = styled.div`
   background: #ffffff;
   box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.108696);
   border-radius: 2px;
+  margin-top: 100px;
+
+  @media (max-width: 360px) {
+    padding: 16px;
+    margin-top: 34px;
+    margin-bottom: 34px;
+  }
 `
 
 export const Title = styled.h1`
@@ -15,6 +22,10 @@ export const Title = styled.h1`
   font-size: 28px;
   line-height: 48px;
   color: #323c46;
+
+  @media (max-width: 360px) {
+    font-size: 22px;
+  }
 `
 
 export const Subtitle = styled.h2`
@@ -22,6 +33,10 @@ export const Subtitle = styled.h2`
   font-size: 18px;
   line-height: 24px;
   color: #949ea8;
+
+  @media (max-width: 360px) {
+    font-size: 14px;
+  }
 `
 
 export const Submit = styled.button`
@@ -73,6 +88,11 @@ export const Input = styled.input`
     -webkit-appearance: none;
     margin: 0;
   }
+
+  @media (max-width: 360px) {
+    width: 270px;
+    font-size: 18px;
+  }
 `
 
 export const Label = styled.label`
@@ -89,6 +109,10 @@ export const Label = styled.label`
     top: -18px;
     font-size: 14px;
     color: #d2d6da;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 16px;
   }
 `
 

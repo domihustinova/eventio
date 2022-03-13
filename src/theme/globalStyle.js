@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components/macro'
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     height: 100%;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
     background-color: #f2f2f2;
     font-family: Hind;
     font-weight: normal;

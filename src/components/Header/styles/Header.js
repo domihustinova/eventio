@@ -10,6 +10,10 @@ export const Container = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 360px) {
+    margin-top: 24px;
+  }
 `
 
 export const Frame = styled.nav`
@@ -17,6 +21,10 @@ export const Frame = styled.nav`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
+
+  @media (max-width: 1110px) {
+    justify-content: flex-end;
+  }
 `
 
 export const Logo = styled.span`
@@ -26,6 +34,12 @@ export const Logo = styled.span`
   .logo {
     fill: ${({ theme }) => (theme === HEADER_THEME.LIGHT ? '#ffffff' : '#323C46')};
   }
+
+  @media (max-width: 1110px) {
+    position: absolute;
+    top: 40px;
+    left: 25px;
+  }
 `
 
 export const CtaWrapper = styled.div``
@@ -34,7 +48,6 @@ export const CtaText = styled.span`
   font-size: 14px;
   line-height: 24px;
   color: #c9ced3;
-  margin-right: 8px;
 `
 
 export const CtaLink = styled(Link)`
@@ -79,6 +92,7 @@ export const AccountImage = styled.div`
   font-size: 14px;
   line-height: 40px;
   color: #949ea8;
+  cursor: pointer;
 `
 
 export const AccountName = styled.button`
@@ -96,6 +110,8 @@ export const AccountName = styled.button`
     margin-left: 8px;
   }
 `
+
+export const Wrapper = styled.div``
 
 export const Dropdown = styled.div`
   position: absolute;

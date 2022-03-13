@@ -16,6 +16,7 @@ import {
   DropdownButton,
   Frame,
   Logo,
+  Wrapper,
 } from './styles/Header'
 
 export function Header({ children, ...restProps }) {
@@ -64,7 +65,7 @@ Header.AccountName = function HeaderAccountName({ children, ...restProps }) {
 Header.Cta = function HeaderCta({ text, action, to, ...restProps }) {
   return (
     <CtaWrapper {...restProps}>
-      <CtaText text={text}>{text}</CtaText>
+      <CtaText text={text}>{text}</CtaText>{' '}
       <CtaLink action={action} to={to}>
         {action}
       </CtaLink>
@@ -72,7 +73,7 @@ Header.Cta = function HeaderCta({ text, action, to, ...restProps }) {
   )
 }
 
-Header.Wrapper = React.forwardRef((props, ref) => <div ref={ref}>{props.children}</div>)
+Header.Wrapper = React.forwardRef((props, ref) => <Wrapper ref={ref}>{props.children}</Wrapper>)
 
 Header.Wrapper.displayName = 'Wrapper'
 

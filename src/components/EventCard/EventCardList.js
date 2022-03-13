@@ -1,6 +1,6 @@
 import React from 'react'
 import { ActionButton, Attendees, CommonOwner } from './styles/EventCardCommon'
-import { Card, Date, Description, Title } from './styles/EventCardList'
+import { Card, Date, Description, Footer, Title } from './styles/EventCardList'
 
 export function EventCardList({ children, ...restProps }) {
   return <Card {...restProps}>{children}</Card>
@@ -28,4 +28,8 @@ EventCardList.Attendees = function EventCardListAttendees({ children, ...restPro
 
 EventCardList.ActionButton = function EventCardListActionButton({ children, ...restProps }) {
   return <ActionButton {...restProps}>{children}</ActionButton>
+}
+
+EventCardList.Footer = function EventCardListFooter({ children, ...restProps }) {
+  return <Footer {...restProps}>{children}</Footer>
 }

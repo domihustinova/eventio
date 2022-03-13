@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export const Container = styled.div`
   background-color: #fff;
@@ -7,6 +7,12 @@ export const Container = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1110px) {
+    height: 100vh;
+    text-align: center;
+    padding: 32px;
+  }
 `
 
 export const Frame = styled.div`
@@ -14,6 +20,10 @@ export const Frame = styled.div`
   flex-direction: column;
   align-items: left;
   max-width: 522px;
+
+  @media (max-width: 1110px) {
+    align-items: center;
+  }
 `
 
 export const Title = styled.h1`
@@ -21,6 +31,10 @@ export const Title = styled.h1`
   font-size: 28px;
   line-height: 48px;
   color: #323c46;
+
+  @media (max-width: 360px) {
+    font-size: 22px;
+  }
 `
 
 export const Subtitle = styled.h2`
@@ -28,6 +42,10 @@ export const Subtitle = styled.h2`
   font-size: 18px;
   line-height: 24px;
   color: #949ea8;
+
+  @media (max-width: 360px) {
+    font-size: 14px;
+  }
 `
 
 export const Button = styled.button`

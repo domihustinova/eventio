@@ -8,14 +8,22 @@ export const CommonOwner = styled.p`
 
 export const CommonTitle = styled.h2`
   font-weight: normal;
-  line-height: 48px;
+  line-height: 32px;
   color: #323c46;
+
+  @media (min-width: 360px) {
+    line-height: 48px;
+  }
 `
 
-export const CommonDescription = styled.p`
+export const CommonDescription = styled.div`
   font-size: 16px;
   line-height: 24px;
   color: #949ea8;
+
+  @media (max-width: 360px) {
+    margin-top: 32px;
+  }
 `
 
 export const Attendees = styled.p`
@@ -26,7 +34,7 @@ export const Attendees = styled.p`
   color: #949ea8;
 `
 
-export const CommonDate = styled.p`
+export const CommonDate = styled.div`
   font-size: 14px;
   line-height: 24px;
   color: #cacdd0;

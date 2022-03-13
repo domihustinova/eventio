@@ -4,7 +4,7 @@ import { loginUser, useAuthState, useAuthDispatch } from '../utils/context'
 import { LOGIN_SUBTITLE } from '../utils/consts'
 import { Login } from '../components/Login/Login'
 
-export function LoginContainer() {
+export function LoginContainer({ children }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [displayPassword, setDisplayPassword] = useState(false)
@@ -56,6 +56,7 @@ export function LoginContainer() {
             callback={handleShowClick}
             show={displayPassword}
           />
+          {children}
           <Login.Submit type="submit" disabled={loading}>
             SIGN IN
           </Login.Submit>

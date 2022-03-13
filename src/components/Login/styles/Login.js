@@ -4,17 +4,34 @@ export const Container = styled.div`
   background-color: #fff;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 1110px) {
+    height: 100vh;
+  }
 `
 
-export const Frame = styled.div``
+export const Frame = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  @media (max-width: 1110px) {
+    align-items: center;
+  }
+`
 
 export const Title = styled.h1`
   font-weight: normal;
   font-size: 28px;
   line-height: 48px;
   color: #323c46;
+
+  @media (max-width: 360px) {
+    font-size: 22px;
+  }
 `
 
 export const Subtitle = styled.h2`
@@ -23,6 +40,10 @@ export const Subtitle = styled.h2`
   line-height: 24px;
   color: ${({ isError }) => (isError ? '#FF4081' : '#949ea8')};
   margin-bottom: 30px;
+
+  @media (max-width: 360px) {
+    font-size: 14px;
+  }
 `
 
 export const Submit = styled.button`
@@ -67,6 +88,11 @@ export const Input = styled.input`
     outline: none;
     border-bottom: 1px solid #323c46;
   }
+
+  @media (max-width: 360px) {
+    width: 270px;
+    font-size: 18px;
+  }
 `
 
 export const Label = styled.label`
@@ -84,11 +110,14 @@ export const Label = styled.label`
     font-size: 14px;
     color: #d2d6da;
   }
+
+  @media (max-width: 360px) {
+    font-size: 16px;
+  }
 `
 
 export const Wrapper = styled.div`
   position: relative;
-  width: 480px;
   margin-bottom: 20px;
 `
 
@@ -104,4 +133,8 @@ export const Img = styled.img`
 export const Form = styled.form`
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 1110px) {
+    align-items: center;
+  }
 `

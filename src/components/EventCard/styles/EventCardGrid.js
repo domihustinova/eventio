@@ -15,15 +15,26 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 360px) {
+    width: 304px;
+    padding: 24px;
+    margin-right: 0px;
+  }
 `
 export const Title = styled(CommonTitle)`
   font-size: 22px;
-  margin-bottom: 32px;
+
+  @media (min-width: 360px) {
+    margin-bottom: 32px;
+  }
 `
 
 export const Owner = styled(CommonOwner)`
-  position: absolute;
-  top: 100px;
+  @media (min-width: 360px) {
+    position: absolute;
+    top: 100px;
+  }
 `
 
 export const Date = styled(CommonDate)`

@@ -5,11 +5,13 @@ import { useClickOutside } from 'react-click-outside-hook'
 import { useAuthState, useAuthDispatch, logout } from '../utils/context'
 import { HEADER_THEME, ROUTES } from '../utils/consts'
 import { getInitials } from '../utils/helpers'
+import useWindowSize from '../utils/hooks/use-window-size'
 
 import { Wrapper } from '../components/common/common'
 import { Header } from '../components/Header/Header'
 import { EventsContainer } from '../containers/Events'
 import { HeaderContainer } from '../containers/Header'
+import { ReactComponent as DropdownArrow } from '../images/dropdown-arrow.svg'
 
 export function Dashboard() {
   const [isDropDownOpen, setIsDropDownOpen] = useState(false)
@@ -19,6 +21,8 @@ export function Dashboard() {
     user: { firstName, lastName },
   } = useAuthState()
   const navigate = useNavigate()
+  const windowSize = useWindowSize()
+  const isMobile = windowSize.width < 360
 
   useEffect(() => {
     if (isClickedOutside) setIsDropDownOpen(false)
@@ -32,19 +36,23 @@ export function Dashboard() {
   return (
     <Wrapper>
       <HeaderContainer theme={HEADER_THEME.DARK}>
-        <Header.Account>
-          <Header.AccountImage>{getInitials(firstName, lastName)}</Header.AccountImage>
-          <Header.AccountName onClick={() => setIsDropDownOpen(!isDropDownOpen)}>
-            {firstName} {lastName}
-          </Header.AccountName>
-          {isDropDownOpen && (
-            <Header.Wrapper ref={parentRef}>
+        <Header.Wrapper ref={parentRef}>
+          <Header.Account onClick={() => setIsDropDownOpen(!isDropDownOpen)}>
+            <Header.AccountImage>{getInitials(firstName, lastName)}</Header.AccountImage>
+            {isMobile ? (
+              <DropdownArrow />
+            ) : (
+              <Header.AccountName>
+                {firstName} {lastName}
+              </Header.AccountName>
+            )}
+            {isDropDownOpen && (
               <Header.Dropdown>
                 <Header.DropdownButton onClick={handleLogout}>Logout</Header.DropdownButton>
               </Header.Dropdown>
-            </Header.Wrapper>
-          )}
-        </Header.Account>
+            )}
+          </Header.Account>
+        </Header.Wrapper>
       </HeaderContainer>
       <EventsContainer />
     </Wrapper>

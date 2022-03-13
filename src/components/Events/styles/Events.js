@@ -7,13 +7,26 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1215px;
   margin-top: 100px;
+
+  @media (max-width: 360px) {
+    margin-top: 64px;
+  }
 `
 
 export const Menu = styled.div`
-  width: 1200px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 1250px) {
+    width: 1200px;
+  }
+
+  @media (max-width: 360px) {
+    margin-bottom: 30px;
+    padding: 0 24px;
+  }
 `
 
 export const Filter = styled.button`
@@ -36,6 +49,12 @@ export const Filter = styled.button`
 
 export const FilterGroup = styled.div`
   margin-bottom: 40px;
+  display: flex;
+
+  @media (max-width: 360px) {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
 `
 
 export const Toggle = styled.button`
@@ -57,7 +76,9 @@ export const Toggle = styled.button`
   }
 `
 
-export const ToggleGroup = styled.div``
+export const ToggleGroup = styled.div`
+  display: flex;
+`
 
 export const Frame = styled.div`
   display: flex;
@@ -88,5 +109,9 @@ export const Add = styled(Link)`
 
   &:hover {
     background-color: #565d5a;
+  }
+
+  @media (max-width: 360px) {
+    margin-bottom: 16px;
   }
 `

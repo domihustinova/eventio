@@ -1,5 +1,6 @@
 import { format } from 'date-fns'
 
+import useWindowSize from '../utils/hooks/use-window-size'
 import { EVENT_ACTION, EVENTS_VIEW } from '../utils/consts'
 import { EventCardGrid } from '../components/EventCard/EventCardGrid.js'
 import { EventCardList } from '../components/EventCard/EventCardList.js'
@@ -14,6 +15,8 @@ export function EventsCardContainer({ event, userId, view, onJoin, onLeave }) {
     description,
     attendees,
   } = event
+  const windowSize = useWindowSize()
+  const isMobile = windowSize.width < 360
 
   const isAttending = attendees.some(attendee => attendee.id === userId)
 
@@ -46,19 +49,37 @@ export function EventsCardContainer({ event, userId, view, onJoin, onLeave }) {
     <EventCardList key={id}>
       <EventCardList.Title>{title}</EventCardList.Title>
       <EventCardList.Description>{description}</EventCardList.Description>
-      <EventCardList.Owner>
-        {firstName} {lastName}
-      </EventCardList.Owner>
+      {!isMobile && (
+        <EventCardList.Owner>
+          {firstName} {lastName}
+        </EventCardList.Owner>
+      )}
       <EventCardList.Date>{format(Date.parse(date), 'MMMM d, yyy - h:m a')}</EventCardList.Date>
-      <EventCardList.Attendees>
-        {attendees.length} of {capacity}
-      </EventCardList.Attendees>
-      <EventCardGrid.ActionButton
-        isAttending={isAttending}
-        onClick={() => (isAttending ? onLeave(id) : onJoin(id))}
-      >
-        {isAttending ? EVENT_ACTION.LEAVE : EVENT_ACTION.JOIN}
-      </EventCardGrid.ActionButton>
+      {isMobile ? (
+        <EventCardList.Footer>
+          <EventCardList.Attendees>
+            {attendees.length} of {capacity}
+          </EventCardList.Attendees>
+          <EventCardGrid.ActionButton
+            isAttending={isAttending}
+            onClick={() => (isAttending ? onLeave(id) : onJoin(id))}
+          >
+            {isAttending ? EVENT_ACTION.LEAVE : EVENT_ACTION.JOIN}
+          </EventCardGrid.ActionButton>
+        </EventCardList.Footer>
+      ) : (
+        <>
+          <EventCardList.Attendees>
+            {attendees.length} of {capacity}
+          </EventCardList.Attendees>
+          <EventCardGrid.ActionButton
+            isAttending={isAttending}
+            onClick={() => (isAttending ? onLeave(id) : onJoin(id))}
+          >
+            {isAttending ? EVENT_ACTION.LEAVE : EVENT_ACTION.JOIN}
+          </EventCardGrid.ActionButton>
+        </>
+      )}
     </EventCardList>
   )
 }
