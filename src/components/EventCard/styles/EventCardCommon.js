@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { DEVICES_MAX, DEVICES_MIN } from '../../../utils/consts'
 
 export const CommonOwner = styled.p`
   font-size: 14px;
@@ -11,7 +12,7 @@ export const CommonTitle = styled.h2`
   line-height: 32px;
   color: #323c46;
 
-  @media (min-width: 360px) {
+  @media ${DEVICES_MIN.LAPTOP} {
     line-height: 48px;
   }
 `
@@ -21,7 +22,7 @@ export const CommonDescription = styled.div`
   line-height: 24px;
   color: #949ea8;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.TABLET} {
     margin-top: 32px;
   }
 `

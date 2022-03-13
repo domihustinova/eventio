@@ -1,4 +1,6 @@
 import styled from 'styled-components/macro'
+import { DEVICES_MAX, DEVICES_MIN } from '../../../utils/consts'
+
 import { CommonDate, CommonOwner, CommonTitle } from './EventCardCommon'
 
 export const Card = styled.div`
@@ -16,22 +18,25 @@ export const Card = styled.div`
   flex-direction: column;
   justify-content: space-between;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
+    margin-right: 0px;
+  }
+
+  @media ${DEVICES_MAX.TABLET} {
     width: 304px;
     padding: 24px;
-    margin-right: 0px;
   }
 `
 export const Title = styled(CommonTitle)`
   font-size: 22px;
 
-  @media (min-width: 360px) {
+  @media ${DEVICES_MIN.TABLET} {
     margin-bottom: 32px;
   }
 `
 
 export const Owner = styled(CommonOwner)`
-  @media (min-width: 360px) {
+  @media ${DEVICES_MIN.TABLET} {
     position: absolute;
     top: 100px;
   }

@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
-import { HEADER_THEME } from '../../../utils/consts'
+import { HEADER_THEME, DEVICES_MAX } from '../../../utils/consts'
 
 export const Container = styled.header`
   position: ${({ theme }) => (theme === HEADER_THEME.LIGHT ? 'absolute' : '')};
@@ -11,7 +11,7 @@ export const Container = styled.header`
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     margin-top: 24px;
   }
 `
@@ -22,7 +22,7 @@ export const Frame = styled.nav`
   justify-content: space-between;
   width: 100%;
 
-  @media (max-width: 1110px) {
+  @media ${DEVICES_MAX.LAPTOP} {
     justify-content: flex-end;
   }
 `
@@ -35,7 +35,7 @@ export const Logo = styled.span`
     fill: ${({ theme }) => (theme === HEADER_THEME.LIGHT ? '#ffffff' : '#323C46')};
   }
 
-  @media (max-width: 1110px) {
+  @media ${DEVICES_MAX.LAPTOP} {
     position: absolute;
     top: 40px;
     left: 25px;

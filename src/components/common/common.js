@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { DEVICES_MAX } from '../../utils/consts'
 
 export const Wrapper = styled.div`
   background-color: #f2f2f2;
@@ -9,8 +10,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     padding: 8px;
-    height: 100%;
   }
 `

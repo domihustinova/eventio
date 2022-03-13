@@ -1,14 +1,14 @@
 import styled from 'styled-components/macro'
 import { Link } from 'react-router-dom'
 
-import { EVENTS_VIEW } from '../../../utils/consts'
+import { EVENTS_VIEW, DEVICES_MAX } from '../../../utils/consts'
 
 export const Container = styled.div`
   width: 100%;
   max-width: 1215px;
   margin-top: 100px;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.TABLET} {
     margin-top: 64px;
   }
 `
@@ -18,12 +18,13 @@ export const Menu = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 40px;
 
-  @media (min-width: 1250px) {
-    width: 1200px;
+  @media (min-width: 1024px) {
+    max-width: ${({ view }) => (view === EVENTS_VIEW.GRID ? '1200px' : '')};
   }
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.TABLET} {
     margin-bottom: 30px;
     padding: 0 24px;
   }
@@ -38,7 +39,7 @@ export const Filter = styled.button`
   font-size: 12px;
   line-height: 24px;
   letter-spacing: 1px;
-  color: ${({ active }) => (active ? '323c46' : '#a9aeb4')};
+  color: ${({ active }) => (active ? '#323c46' : '#a9aeb4')};
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 
@@ -48,12 +49,10 @@ export const Filter = styled.button`
 `
 
 export const FilterGroup = styled.div`
-  margin-bottom: 40px;
   display: flex;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.TABLET} {
     flex-direction: column;
-    margin-bottom: 0px;
   }
 `
 
@@ -83,7 +82,8 @@ export const ToggleGroup = styled.div`
 export const Frame = styled.div`
   display: flex;
   flex-direction: ${({ view }) => (view === EVENTS_VIEW.GRID ? 'row' : 'column')};
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
 `
 
@@ -111,7 +111,7 @@ export const Add = styled(Link)`
     background-color: #565d5a;
   }
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.TABLET} {
     margin-bottom: 16px;
   }
 `

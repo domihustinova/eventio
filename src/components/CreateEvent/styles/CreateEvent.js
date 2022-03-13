@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { DEVICES_MAX } from '../../../utils/consts'
 
 export const Container = styled.div`
   display: flex;
@@ -10,7 +11,7 @@ export const Container = styled.div`
   border-radius: 2px;
   margin-top: 100px;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     padding: 16px;
     margin-top: 34px;
     margin-bottom: 34px;
@@ -23,7 +24,7 @@ export const Title = styled.h1`
   line-height: 48px;
   color: #323c46;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     font-size: 22px;
   }
 `
@@ -34,7 +35,7 @@ export const Subtitle = styled.h2`
   line-height: 24px;
   color: #949ea8;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     font-size: 14px;
   }
 `
@@ -89,7 +90,7 @@ export const Input = styled.input`
     margin: 0;
   }
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.TABLET} {
     width: 270px;
     font-size: 18px;
   }
@@ -111,7 +112,7 @@ export const Label = styled.label`
     color: #d2d6da;
   }
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     font-size: 16px;
   }
 `

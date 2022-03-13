@@ -66,7 +66,7 @@ export function EventsContainer() {
   return (
     <>
       <Events>
-        <Events.Menu>
+        <Events.Menu view={view}>
           <Events.FilterGroup>
             {Object.values(EVENTS_FILTERS).map(filter => (
               <Events.Filter

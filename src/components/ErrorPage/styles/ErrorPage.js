@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { DEVICES_MAX } from '../../../utils/consts'
 
 export const Container = styled.div`
   background-color: #fff;
@@ -8,7 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 1110px) {
+  @media ${DEVICES_MAX.LAPTOP} {
     height: 100vh;
     text-align: center;
     padding: 32px;
@@ -21,7 +22,7 @@ export const Frame = styled.div`
   align-items: left;
   max-width: 522px;
 
-  @media (max-width: 1110px) {
+  @media ${DEVICES_MAX.LAPTOP} {
     align-items: center;
   }
 `
@@ -32,7 +33,7 @@ export const Title = styled.h1`
   line-height: 48px;
   color: #323c46;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     font-size: 22px;
   }
 `
@@ -43,7 +44,7 @@ export const Subtitle = styled.h2`
   line-height: 24px;
   color: #949ea8;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     font-size: 14px;
   }
 `

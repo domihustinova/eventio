@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useClickOutside } from 'react-click-outside-hook'
 
 import { useAuthState, useAuthDispatch, logout } from '../utils/context'
-import { HEADER_THEME, ROUTES } from '../utils/consts'
+import { HEADER_THEME, ROUTES, BREAKPOINTS } from '../utils/consts'
 import { getInitials } from '../utils/helpers'
 import useWindowSize from '../utils/hooks/use-window-size'
 
@@ -22,7 +22,7 @@ export function Dashboard() {
   } = useAuthState()
   const navigate = useNavigate()
   const windowSize = useWindowSize()
-  const isMobile = windowSize.width < 360
+  const isMobile = windowSize.width < BREAKPOINTS.TABLET
 
   useEffect(() => {
     if (isClickedOutside) setIsDropDownOpen(false)

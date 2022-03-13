@@ -1,7 +1,7 @@
 import React from 'react'
 
 import useWindowSize from '../utils/hooks/use-window-size'
-import { HEADER_THEME, HEADER_TEXTS, ROUTES } from '../utils/consts'
+import { HEADER_THEME, HEADER_TEXTS, ROUTES, BREAKPOINTS } from '../utils/consts'
 import { Header } from '../components/Header/Header'
 
 import { LayoutContainer } from '../containers/Layout'
@@ -9,7 +9,7 @@ import { LoginContainer } from '../containers/Login'
 
 export function Login() {
   const windowSize = useWindowSize()
-  const isMobile = windowSize.width < 1110
+  const isMobile = windowSize.width < BREAKPOINTS.LAPTOP
 
   if (isMobile) {
     return (

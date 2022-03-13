@@ -1,4 +1,5 @@
 import styled from 'styled-components/macro'
+import { DEVICES_MAX } from '../../../utils/consts'
 
 export const Container = styled.div`
   background-color: #fff;
@@ -8,7 +9,7 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 1110px) {
+  @media ${DEVICES_MAX.LAPTOP} {
     height: 100vh;
   }
 `
@@ -18,7 +19,7 @@ export const Frame = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 1110px) {
+  @media ${DEVICES_MAX.LAPTOP} {
     align-items: center;
   }
 `
@@ -29,7 +30,7 @@ export const Title = styled.h1`
   line-height: 48px;
   color: #323c46;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     font-size: 22px;
   }
 `
@@ -41,7 +42,7 @@ export const Subtitle = styled.h2`
   color: ${({ isError }) => (isError ? '#FF4081' : '#949ea8')};
   margin-bottom: 30px;
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     font-size: 14px;
   }
 `
@@ -89,7 +90,7 @@ export const Input = styled.input`
     border-bottom: 1px solid #323c46;
   }
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.TABLET} {
     width: 270px;
     font-size: 18px;
   }
@@ -111,7 +112,7 @@ export const Label = styled.label`
     color: #d2d6da;
   }
 
-  @media (max-width: 360px) {
+  @media ${DEVICES_MAX.MOBILE_SMALL} {
     font-size: 16px;
   }
 `
@@ -134,7 +135,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
 
-  @media (max-width: 1110px) {
+  @media ${DEVICES_MAX.LAPTOP} {
     align-items: center;
   }
 `

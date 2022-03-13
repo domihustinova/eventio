@@ -1,7 +1,7 @@
 import { format } from 'date-fns'
 
 import useWindowSize from '../utils/hooks/use-window-size'
-import { EVENT_ACTION, EVENTS_VIEW } from '../utils/consts'
+import { EVENT_ACTION, EVENTS_VIEW, BREAKPOINTS } from '../utils/consts'
 import { EventCardGrid } from '../components/EventCard/EventCardGrid.js'
 import { EventCardList } from '../components/EventCard/EventCardList.js'
 
@@ -16,7 +16,7 @@ export function EventsCardContainer({ event, userId, view, onJoin, onLeave }) {
     attendees,
   } = event
   const windowSize = useWindowSize()
-  const isMobile = windowSize.width < 360
+  const isMobile = windowSize.width < BREAKPOINTS.TABLET
 
   const isAttending = attendees.some(attendee => attendee.id === userId)
 
