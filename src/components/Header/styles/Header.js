@@ -28,14 +28,20 @@ export const Logo = styled.span`
   }
 `
 
-export const Text = styled.span`
+export const CtaWrapper = styled.div``
+
+export const CtaText = styled.span`
   font-size: 14px;
   line-height: 24px;
   color: #c9ced3;
+  margin-right: 8px;
+`
 
-  span {
-    color: #949ea8;
-  }
+export const CtaLink = styled(Link)`
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 24px;
+  color: #949ea8;
 `
 
 export const Close = styled(Link)`

@@ -17,6 +17,7 @@ export const AUTH_REDUCER_ACTION_TYPES = {
 export const ROUTES = {
   HOME: '/',
   LOGIN: '/login',
+  SIGNUP: '/signup',
   DASHBOARD: '/dashboard',
   CREATE: '/create',
   NOT_FOUND: '*',
@@ -42,4 +43,23 @@ export const EVENT_ACTION = {
   JOIN: 'JOIN',
   LEAVE: 'LEAVE',
   EDIT: 'EDIT',
+}
+
+export const LAYOUT_TEXTS = {
+  TEXT: '"Great, kid. Don\'t get cocky."',
+  AUTHOR: 'Han Solo',
+}
+
+export const HEADER_TEXTS = {
+  SIGN_UP_TEXT: "Don't have account?",
+  SIGN_UP_CTA: 'SIGN UP',
+  LOGIN_TEXT: 'Already have an account?',
+  LOGIN_CTA: 'SIGN IN',
+}
+
+export const NOT_FOUND_TEXTS = {
+  TITLE: '404 Error - page not found',
+  SUBTITLE:
+    'Seems like Darth Vader just hits our website and drops it down. Please press the refresh button and everything should be fine again.',
+  ACTION: 'REFRESH',
 }

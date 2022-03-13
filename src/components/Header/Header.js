@@ -9,11 +9,13 @@ import {
   AccountName,
   Close,
   Container,
+  CtaWrapper,
+  CtaText,
+  CtaLink,
   Dropdown,
   DropdownButton,
   Frame,
   Logo,
-  Text,
 } from './styles/Header'
 
 export function Header({ children, ...restProps }) {
@@ -59,8 +61,15 @@ Header.AccountName = function HeaderAccountName({ children, ...restProps }) {
   )
 }
 
-Header.Text = function HeaderText({ children, ...restProps }) {
-  return <Text {...restProps}>{children}</Text>
+Header.Cta = function HeaderCta({ text, action, to, ...restProps }) {
+  return (
+    <CtaWrapper {...restProps}>
+      <CtaText text={text}>{text}</CtaText>
+      <CtaLink action={action} to={to}>
+        {action}
+      </CtaLink>
+    </CtaWrapper>
+  )
 }
 
 Header.Wrapper = React.forwardRef((props, ref) => <div ref={ref}>{props.children}</div>)

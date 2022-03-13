@@ -54,7 +54,7 @@ export function EventsContainer() {
       const response = await attendEvent(id, token)
       if (response.error === 'User.NotAuthenticated') {
         const response = await refreshAuth(dispatch, { refreshToken })
-        await unattendEvent(id, response.token)
+        await attendEvent(id, response.token)
       }
       const events = await getAllEvents()
       setEvents(events)
