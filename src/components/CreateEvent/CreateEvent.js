@@ -1,6 +1,7 @@
 import React from 'react'
 import {
   Container,
+  Error,
   Frame,
   Input,
   Label,
@@ -12,6 +13,10 @@ import {
 
 export function CreateEvent({ children, ...restProps }) {
   return <Container {...restProps}>{children}</Container>
+}
+
+CreateEvent.Error = function CreateEventTitle({ children, ...restProps }) {
+  return <Error {...restProps}>{children}</Error>
 }
 
 CreateEvent.Title = function CreateEventTitle({ children, ...restProps }) {

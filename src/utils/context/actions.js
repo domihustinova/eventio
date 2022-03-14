@@ -38,7 +38,7 @@ export async function loginUser(dispatch, loginPayload) {
 export async function logout(dispatch) {
   dispatch({ type: AUTH_REDUCER_ACTION_TYPES.LOGOUT })
   localStorage.removeItem('currentUser')
-  localStorage.removeItem('id')
+  localStorage.removeItem('refreshToken')
 }
 
 export async function refreshAuth(dispatch, refreshToken) {

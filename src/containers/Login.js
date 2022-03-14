@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { loginUser, useAuthState, useAuthDispatch } from '../utils/context'
-import { LOGIN_SUBTITLE } from '../utils/consts'
+import { ROUTES, LOGIN_SUBTITLE } from '../utils/consts'
 import { Login } from '../components/Login/Login'
 
 export function LoginContainer({ children }) {
@@ -21,7 +21,7 @@ export function LoginContainer({ children }) {
     try {
       const response = await loginUser(dispatch, { email, password })
       if (!response.id) return
-      navigate('/dashboard')
+      navigate(ROUTES.DASHBOARD)
     } catch (error) {
       console.log(error)
     }

@@ -36,6 +36,26 @@ export const attendEvent = async (id, token) => {
   }
 }
 
+export const createEvent = async (token, createEventPayload) => {
+  const requestOptions = {
+    mode: 'cors',
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      APIKey: process.env.REACT_APP_API_KEY,
+      Authorization: token,
+    },
+    body: JSON.stringify(createEventPayload),
+  }
+
+  try {
+    const response = await fetch(`${ROOT_URL}/events`, requestOptions)
+    return response.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
 export const getAllEvents = async () => {
   const response = await fetch(`${ROOT_URL}/events`, {
     mode: 'cors',

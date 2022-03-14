@@ -26,12 +26,6 @@ export const AuthReducer = (initialState, action) => {
         loading: true,
         errorMessage: null,
       }
-    // case AUTH_REDUCER_ACTION_TYPES.REQUEST_REFRESH_TOKEN:
-    //   return {
-    //     ...initialState,
-    //     loading: true,
-    //     errorMessage: null,
-    //   }
     case AUTH_REDUCER_ACTION_TYPES.REFRESH_TOKEN_SUCCESS:
       return {
         ...initialState,
@@ -53,8 +47,8 @@ export const AuthReducer = (initialState, action) => {
         ...initialState,
         user: null,
         errorMessage: null,
-        // token: '',
-        // refreshToken: '',
+        token: '',
+        refreshToken: '',
       }
 
     case AUTH_REDUCER_ACTION_TYPES.LOGIN_ERROR:

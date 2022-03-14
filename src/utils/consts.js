@@ -45,6 +45,11 @@ export const EVENT_ACTION = {
   EDIT: 'EDIT',
 }
 
+export const CREATE_EVENT_ACTION = {
+  SUBMITTING: 'SUBMITTING...',
+  CREATE: 'CREATE NEW EVENT',
+}
+
 export const LAYOUT_TEXTS = {
   TEXT: '"Great, kid. Don\'t get cocky."',
   AUTHOR: 'Han Solo',

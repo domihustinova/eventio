@@ -18,6 +18,14 @@ export const Container = styled.div`
   }
 `
 
+export const Error = styled.div`
+  margin-top: 20px;
+  font-size: 18px;
+  text-align: center;
+  line-height: 24px;
+  color: #ff4081;
+`
+
 export const Title = styled.h1`
   font-weight: normal;
   font-size: 28px;

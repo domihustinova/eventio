@@ -106,12 +106,9 @@ export const Add = styled(Link)`
   cursor: pointer;
   transition: all 0.3s ease-in-out;
   text-align: center;
+  margin-bottom: 16px;
 
   &:hover {
     background-color: #565d5a;
-  }
-
-  @media ${DEVICES_MAX.TABLET} {
-    margin-bottom: 16px;
   }
 `

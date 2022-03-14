@@ -24,7 +24,9 @@ export function EventsCardContainer({ event, userId, view, onJoin, onLeave }) {
     return (
       <EventCardGrid key={id}>
         <EventCardGrid.Content>
-          <EventCardGrid.Date>{format(Date.parse(date), 'MMMM d, yyy - h:m a')}</EventCardGrid.Date>
+          <EventCardGrid.Date>
+            {format(Date.parse(date), 'MMMM d, yyy - hh:mm a')}
+          </EventCardGrid.Date>
           <EventCardGrid.Title>{title}</EventCardGrid.Title>
           <EventCardGrid.Owner>
             {firstName} {lastName}
@@ -54,7 +56,7 @@ export function EventsCardContainer({ event, userId, view, onJoin, onLeave }) {
           {firstName} {lastName}
         </EventCardList.Owner>
       )}
-      <EventCardList.Date>{format(Date.parse(date), 'MMMM d, yyy - h:m a')}</EventCardList.Date>
+      <EventCardList.Date>{format(Date.parse(date), 'MMMM d, yyy - hh:mm a')}</EventCardList.Date>
       <EventCardList.Footer isMobile={isMobile}>
         <EventCardList.Attendees isMobile={isMobile}>
           {attendees.length} of {capacity}
